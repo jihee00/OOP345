@@ -1,0 +1,37 @@
+//----------------------------------------------
+
+// Name:               Jihee Kim
+
+// Seneca Student ID:  141389189
+
+// Seneca email:       JKIM541@myseneca.ca
+
+// Date of completion: 02/23/2020
+
+//----------------------------------------------
+
+*the difference between the implementations/utilizations of a functor and a lambda expression. When is appropriate to use each one?
+
+ The main complain about functors is that they are not in the same place that they were used. So we had to find and read the functor out of context to the place it was being used in (even if it is only being used in one place).
+
+The other problem was that functor required some wiring to get parameters into the functor object. Not complex but all basic boilerplate code. And boiler plate is susceptible to cut and paste problems.
+
+Lambda try and fix both these. But I would use functors if the function is repeated in multiple places or is larger than small.
+
+*the constructor for SpellChecker generates an exception in certain conditions. How would you change your code to achieve the same result, but without exceptions (both on the constructor and on the client side)? Compare the two solutions.
+ 
+   The spellcheck’s one-argument constructor generates an exception if the file failed to open. To achieve the same results without using exceptions to report that the file failed to open could be having the client be responsible for opening the file. 
+If the client was able to successfully open the file, the client can pass the file object to the constructor. If the client was not able to successfully open the file, the client code can report an error to the user.
+ 
+*the classes Movie and Book contain almost identical logic in loading data from the file. How would you redesign the classes in order not to duplicate that logic?
+
+  A possible way to avoid duplicating logic for both of the constructors is to create a templated helper function that accepts a variable amount of arguments each of any type.
+
+*the classes Movie and Book are instantiated from the main() function using a custom constructor, but they also contain a default constructor. Is the default constructor necessary? Could you remove it? Justify your answer.
+
+  The classes Movie and Book require a default constructor. This is because when a statically allocated array is defined or when memory is allocated off the heap with the new expression to store instances
+of a class, the run time must invoke the default constructor for each element in the array to instantiate the newly allocated elements. 
+
+-- Quiz 5 Reflection --
+
+  No incorrect answer 

@@ -1,0 +1,20 @@
+//----------------------------------------------
+
+// Name:               Jihee Kim
+
+// Seneca Student ID:  141389189
+
+// Seneca email:       JKIM541@myseneca.ca
+
+// Date of completion: 1/22/2020
+
+//----------------------------------------------
+
+* the reason for the significant time difference between the copy and move operations
+
+   Unlike the copy operator, the move operator does not copy the entire string. 
+  It just changes the string that the temporary object was pointing at, so there is a significant performance gap.
+  The manipulation of addresses is an efficient alternative to the copying of members that contain many elements.
+
+-- Quiz 2 Reflection --
+  No incorrect answer 

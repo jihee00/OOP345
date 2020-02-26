@@ -1,0 +1,25 @@
+//----------------------------------------------
+
+// Name:               Jihee Kim
+
+// Seneca Student ID:  141389189
+
+// Seneca email:       JKIM541@myseneca.ca
+
+// Date of completion: 02/09/2020
+
+//----------------------------------------------
+
+*the difference between the implementations of a composition and an aggregation.
+A composition is a has-a relationship between classes that implements complete ownership.  The composer object is responsible for destroying its component object(s) at or before the time of its own destruction.  A composition is incomplete without its components. 
+Composition is more flexible (less coupled) design-wise than inheritance.  Updates to the component class need not affect the composer class.  However, member functions added to the component class require forwarding member functions in the composer class. 
+An aggregation is a composition that does not manage the creation or destruction of the objects that it uses.  The responsibility for creating and destroying the objects lies outside the aggregator type.  The aggregator is complete whether or not any of the objects that it uses exist.  The objects survive the destruction of the aggregator. 
+Aggregation is more flexible (less coupled) design-wise than composition.  Updates to any aggregatee type do not interfere with the design of the aggregator type.  Member functions added to the aggregatee type do not require forwarding member functions in the aggregator type. 
+
+*the difference between the implementations of move and copy functions in a composition and an aggregation.
+In the composition, deep copying and assignment are required and we must code the copy constructor, assignment operator and destructor. 
+However, in the aggregation, the application creates the objects separately and destroys them separately.
+
+-- Quiz 4 Reflection --
+
+  No incorrect answer 
