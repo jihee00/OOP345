@@ -1,0 +1,39 @@
+//----------------------------------------------
+
+// Name:               Jihee Kim
+
+// Seneca Student ID:  141389189
+
+// Seneca email:       JKIM541@myseneca.ca
+
+// Date of completion: 03/08/2020
+
+//----------------------------------------------
+
+            In this Workshop, I learned how to use a std::vector. The vector class template defines classes that manage data structures 
+that can change in size but have their elements ordered in sequence.  These classes use contiguous storage locations for their elements 
+and are nearly as efficient as arrays.  They store their elements on free store and can adjust their size as required.  
+The class template is optimized for fast random access as well as addition and deletion of elements at the back-end of a sequence. 
+
+* Why do you need to deallocate the dynamically allocated memory in your vector?
+
+	Classes that access resources through instance resource pointers manage those resources through constructors, assignment operators and destructors.  
+When objects of these classes go out of scope, the objects themselves release the memory used by their resources. An object that has been allocated dynamically 
+and is accessed through a pointer requires management of the region of memory that it occupies. 
+
+* When building an object from the input file, different things can go wrong: the record represents an unknown type of vehicle, or record contains invalid data. 
+How can the function loadData() detect what went wrong? 
+Can you think at another solution than the one you have implemented?
+
+	In the createInstance() function, threw an exception on the occurrence of an error. The client should check the error information and change it to valid data.
+Another solution is that createInstance() function returns nullptr on failure.
+
+*In this workshop you had to use std::list<sdds::Vehicle*> and std::vector<sdds::Vehicle*> to store a collection of vehicles as pointers. 
+Could you have used std::list<sdds::Vehicle> and std::vector<sdds::Vehicle> instead? Justify your answer!
+
+	No, we couldn't. Because the vehicle class is an abstract base class, so it would be impossible to add elements into the container 
+since the elements would not be able to be constructed.
+
+-- Quiz 6 Reflection --
+
+  No incorrect answer 
