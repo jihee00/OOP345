@@ -1,0 +1,44 @@
+//----------------------------------------------
+
+// Name:               Jihee Kim
+
+// Seneca Student ID:  141389189
+
+// Seneca email:       JKIM541@myseneca.ca
+
+// Date of completion: 03/12/2020
+
+//----------------------------------------------
+
+  In this workshop, I learned how to copy data from a file into a sequential container and use the STL functions.
+
+1. list all the STL functions that you have used in this workshop; explain your reasoning for choosing each one, and not another.
+
+   * std::accumulate() (SongCollection::display()) 
+	This STL function was used sum the total lengths of the songs. 
+   * std::sort() (in SongCollection::sort)
+	This STL function was used to sort the contents of the container. 
+   * std::replace_if() (SongCollection::cleanAlbum())
+ 	Since this function only performed a replace operation if a condition is true, std::replace_if() was used.
+   * std::any_of() (SongCollection::inCollection())
+	This STL function was used to check if any elements satisfied the condition.
+      if any artist name is equal to the parameter, return true.
+   * std::copy_if() (SongCollection::getSongsForArtist())
+ 	This STL function was used to copy the song objects from the container to a list, if that element met a specific condition. 
+      Since we should copy the contents of one container to the other, std::copy_if() was used.
+
+2. Present the advantages of using STL algorithms vs. implementing the functionality by yourself using loops.
+
+	Frequently used repetitive functions are useful in terms of efficiency to use previously deployed STL algorithms. 
+
+3. The function that sorts the collection of songs receives as a parameter the field name to use; this can create errors if the client specifies an invalid field (or misspells it). 
+How would you redesign that function to prevent the client to specify an invalid string, allowing any error to be detected by the compiler?
+
+	We can use enumeration type and give the sorting option to the client. 
+
+
+-- Quiz 7 Reflection --
+
+20. I didn't have enough time to look at the code properly.
+I thought it was the same code as the above 19, and I thought a memory leak occurred.
+However, 20 is a smart point unlike 19, and memory leeks didn't occur.
