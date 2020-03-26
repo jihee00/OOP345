@@ -1,0 +1,46 @@
+//----------------------------------------------
+
+// Name:               Jihee Kim
+
+// Seneca Student ID:  141389189
+
+// Seneca email:       JKIM541@myseneca.ca
+
+// Date of completion: 03/19/2020
+
+//----------------------------------------------
+
+ In this workshop, I learned how to create a program component of quadratic complexity and use a smart pointer to move an object.
+
+* the advantage that smart pointer syntax provides. Use example from your code to support your explanation.
+
+	Using the smart pointer syntax is better and easier for the programmer because it takes care of the deallocation of an object automatically. 
+This is especially useful when we are working with a solution that utilizes exception handling frequently. 
+--  a "unique smart pointer"
+                - gives exception safety for memory that is allocated dynamically
+                - permits the passing of ownership (of an object) on returning from a function
+                - permits the passing of ownership (of an object) on entering a function
+                - collects the object or resource inside a container
+-- how to declare a unique smart pointer: std::unique_ptr<Product> p { new Product(desc[i].desc, price[j].price) };
+-- how to recieve a smart pointer as an argument: void operator+=(std::unique_ptr<T>& obj) {list.push_back(*obj);}
+
+* the difference between raw and smart pointer syntax in your solution.
+
+        creation of a unique smart pointer syntax:                                        
+                                        std::unique_ptr<Product> p { new Product(desc[i].desc, price[j].price) };
+
+        creation of a raw pointer syntax: 
+                                        Product* tempProduct = new Product(desc[i].desc, price[j].price);
+          
+        recieving a smart pointer syntax:   void operator+=(std::unique_ptr<T>& obj) {list.push_back(*obj);}
+
+        explaination: We are basically recieving a reference to a T object in the name of Obj, this works because in this scenario the T type is "Product" and since we are creating a smart pointer of Product type, we are able to recieve the smart pointer as a parameter.
+
+        recieving a raw pointer syntax:     void operator+=(T *obj) {list.push_back(*obj);}
+                                            
+        explaination: We are basically recieving a pointer of type T as the incoming parameter, this makes sense because in this scenario, T is the type of "Product", and because we are sending a pointer of type Product to the operator+=, we are certainly able to recieve an argument of type T*.
+                    
+
+-- Quiz 8 Reflection --
+
+  No incorrect answer 
